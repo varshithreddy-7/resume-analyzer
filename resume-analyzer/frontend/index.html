@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>AI Resume Analyzer</h1>
+        <button id="toggle-theme">🌙 Toggle Theme</button>
+        <form id="analyzer-form" enctype="multipart/form-data" method="POST" action="/analyze">
+            <label for="resume">Upload Resume (PDF/DOCX):</label>
+            <input type="file" name="resume" accept=".pdf,.docx" required />
+
+            <label for="jobdesc">Paste Job Description:</label>
+            <textarea name="jobdesc" rows="8" required></textarea>
+
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-theme');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>

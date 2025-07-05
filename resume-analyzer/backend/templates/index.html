@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+        body.dark {
+            background-color: #1e1e1e;
+            color: #eee;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        body.dark .container {
+            background: #2c2c2c;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label, textarea, input, button {
+            margin: 10px 0;
+        }
+        textarea, input {
+            padding: 10px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Resume Analyzer</h1>
+        <button id="toggle-theme">🌙 Toggle Theme</button>
+        <form id="analyzer-form" enctype="multipart/form-data" method="POST" action="/analyze">
+            <label for="resume">Upload Resume (PDF/DOCX):</label>
+            <input type="file" name="resume" accept=".pdf,.docx" required />
+
+            <label for="jobdesc">Paste Job Description:</label>
+            <textarea name="jobdesc" rows="8" required></textarea>
+
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle-theme');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>

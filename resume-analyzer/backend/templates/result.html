@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Result</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f9f9f9; }
+        .result { max-width: 600px; margin: auto; padding: 20px; background: white; border-radius: 8px; }
+        .score { font-size: 1.5em; color: green; }
+    </style>
+</head>
+<body>
+    <div class="result">
+        <h1>Analysis Result</h1>
+        <p class="score">Score: {{ score }}%</p>
+        <h3>Matched Keywords:</h3>
+        <p>{{ matches }}</p>
+        <h3>Missing Keywords:</h3>
+        <p>{{ missing }}</p>
+        <a href="/">🔙 Analyze Another</a>
+    </div>
+</body>
+</html>
